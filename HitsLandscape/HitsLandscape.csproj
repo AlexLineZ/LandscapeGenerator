@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA0A9016-8729-4D30-9DC7-1984C83C536F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HitsLandscape</RootNamespace>
+    <AssemblyName>HitsLandscape</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <LangVersion>11</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapeGeneration\Cell.cs" />
+    <Compile Include="LandscapeGeneration\CellType.cs" />
+    <Compile Include="LandscapeGeneration\Disaster\IDisaster.cs" />
+    <Compile Include="LandscapeGeneration\Disaster\DisasterType.cs" />
+    <Compile Include="LandscapeGeneration\Disaster\Drought.cs" />
+    <Compile Include="LandscapeGeneration\Disaster\Flood.cs" />
+    <Compile Include="LandscapeGeneration\Disaster\Wildfire.cs" />
+    <Compile Include="LandscapeGeneration\Factory\CellFactory.cs" />
+    <Compile Include="LandscapeGeneration\Factory\DisasterFactory.cs" />
+    <Compile Include="LandscapeGeneration\Factory\MapGenetator.cs" />
+    <Compile Include="LandscapeGeneration\Factory\NoiseFactory.cs" />
+    <Compile Include="LandscapeGeneration\Functions\RandomFun.cs" />
+    <Compile Include="LandscapeGeneration\Functions\Translator.cs" />
+    <Compile Include="LandscapeGeneration\GameModel.cs" />
+    <Compile Include="LandscapeGeneration\Map.cs" />
+    <Compile Include="LandscapeGeneration\Material\IProperty.cs" />
+    <Compile Include="LandscapeGeneration\Material\Material.cs" />
+    <Compile Include="LandscapeGeneration\Material\StageOfAggregation\IStageOfAggregation.cs" />
+    <Compile Include="LandscapeGeneration\Material\StageOfAggregation\Stages\Fluid.cs" />
+    <Compile Include="LandscapeGeneration\Material\StageOfAggregation\Stages\Gas.cs" />
+    <Compile Include="LandscapeGeneration\Material\StageOfAggregation\Stages\Solid.cs" />
+    <Compile Include="LandscapeGeneration\Material\StaticMaterial\Materials\Dirt.cs" />
+    <Compile Include="LandscapeGeneration\Material\StaticMaterial\Materials\Sand.cs" />
+    <Compile Include="LandscapeGeneration\Material\StaticMaterial\Materials\Snow.cs" />
+    <Compile Include="LandscapeGeneration\Material\StaticMaterial\Materials\Stone.cs" />
+    <Compile Include="LandscapeGeneration\Material\StaticMaterial\StaticMaterial.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\Fire.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\Plant\Flower.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\Plant\Grass.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\Plant\Plant.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\Plant\Tree.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\TickableMaterial.cs" />
+    <Compile Include="LandscapeGeneration\Material\TickableMaterial\Water.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\PerlinNoise.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\CraterNoise.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\DiamondSquareNoise.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\INoiseGenerator.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\NoiseType.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\RiverNoise.cs" />
+    <Compile Include="LandscapeGeneration\NoiseGeneration\RandomNoise.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
